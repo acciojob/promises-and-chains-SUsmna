@@ -4,8 +4,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 
     const nameInput = document.getElementById('name').value.trim();
     const ageInput = document.getElementById('age').value.trim();
-	const btn = document.getElementById("bts");
-
+	const bts = document.getElementById("btn");
 
     if (nameInput === '' || ageInput === '') {
         alert('Inputs cannot be empty');
@@ -13,28 +12,25 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
     }
 	
     const age = parseInt(ageInput);
-	
-// function displayOutput(){
-    new Promise((resolve, reject) => {
-        setTimeout(() => {
-            if (age > 18) {
-                resolve();
-            } else {
-                reject();
-            }
-        }, 4000); 
-    })
-    .then(() => {
-        alert(`Welcome, ${nameInput}. You can vote.`);
-    })
-    .catch(() => {
-        alert(`Oh sorry ${nameInput}. You aren't old enough.`);
-    });
+
+	function downloadAndDisplay(){
+	    new Promise((resolve, reject) => {
+	        setTimeout(() => {
+	            if (age > 18) {
+	                resolve();
+	            } else {
+	                reject();
+	            }
+	        }, 4000); 
+	    })
+	    .then(() => {
+	        alert(`Welcome, ${nameInput}. You can vote.`);
+	    })
+	    .catch(() => {
+	        alert(`Oh sorry ${nameInput}. You aren't old enough.`);
+	    });
+	}
+	bts.addEventListener('click', downloadAndDisplay);
 });
-// }
-// btn.addEventListener('click', displayOutput);
-
-
-
 
 
