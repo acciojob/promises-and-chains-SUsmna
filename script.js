@@ -14,7 +14,7 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 	
     const age = parseInt(ageInput);
 	
-function displayOutput(){
+// function displayOutput(){
     new Promise((resolve, reject) => {
         setTimeout(() => {
             if (age > 18) {
@@ -31,8 +31,8 @@ function displayOutput(){
         alert(`Oh sorry ${nameInput}. You aren't old enough.`);
     });
 });
-}
-btn.addEventListener('click', displayOutput);
+// }
+// btn.addEventListener('click', displayOutput);
 
 
 
