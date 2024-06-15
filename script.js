@@ -4,15 +4,17 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
 
     const nameInput = document.getElementById('name').value.trim();
     const ageInput = document.getElementById('age').value.trim();
+	const btn = document.getElementById("bts");
 
-	
+
     if (nameInput === '' || ageInput === '') {
         alert('Inputs cannot be empty');
         return;
     }
 	
     const age = parseInt(ageInput);
-
+	
+function displayOutput(){
     new Promise((resolve, reject) => {
         setTimeout(() => {
             if (age > 18) {
@@ -29,6 +31,8 @@ document.getElementById('userForm').addEventListener('submit', function(event) {
         alert(`Oh sorry ${nameInput}. You aren't old enough.`);
     });
 });
+}
+btn.addEventListener('click', displayOutput);
 
 
 
